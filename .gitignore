@@ -105,5 +105,7 @@ venv.bak/
 
 # my ignores
 
+
 main/media
 node_modules
+main/frontend/static/frontend/main.js

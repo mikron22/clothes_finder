@@ -1,8 +1,12 @@
 from rest_framework import routers
-from .api import ClothViewSet
+from .api import ClothViewSet, PersonAPIView, KeywordsAPIView
+from django.urls import path
 
 
 router = routers.DefaultRouter()
 router.register('api/clothes', ClothViewSet, 'clothes')
 
-urlpatterns = router.urls
+urlpatterns = router.urls + [
+    path('api/people', PersonAPIView.as_view()),
+    path('api/keywords', KeywordsAPIView.as_view())
+]
