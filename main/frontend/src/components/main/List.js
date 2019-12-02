@@ -1,30 +1,29 @@
-import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import React, { Fragment } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import ListItem from './ListItem'
 
-class List extends Component {
-    state = {
-        names: ['aaa', 'bbb', 'ccc']
+import { clearClothes, removeCloth } from '../../redux/actions/clothes'
+
+
+
+const List = () => {
+    const clothes = useSelector(state => state.clothes.clothes)
+    const dispatch = useDispatch()
+
+    const removeHandler = cloth => {
+        removeCloth(dispatch, clothes, cloth)
     }
 
-    static propTypes = {}
-    render() {
-        const elements = this.state.names.map((n, index) => {
-            return (
-                <ListItem key={index} name={n} />
-            )
-        })
-        return (
-            <div className="container">
-                <Fragment>
-                    {elements}
-                </Fragment>
-            </div>
-        )
-    }
+    const elements = clothes.map(cloth => <ListItem key={cloth.url} cloth={cloth} onRemove={removeHandler} />)
+
+    return (
+        <Fragment>
+            {elements}
+            <button onClick={() => clearClothes(dispatch)}>DELETE</button>
+        </Fragment>
+    )
 }
 
 
-export default connect(null)(List)
+export default List

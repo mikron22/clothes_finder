@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Cloth, Person, Phone, Keywords
+from .models import Cloth, Person, Keywords
 
 # Register your models here.
 
-admin.site.register([Cloth, Person, Phone, Keywords])
+admin.site.register([Cloth, Person, Keywords])

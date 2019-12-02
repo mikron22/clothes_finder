@@ -1,14 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function ListItem(props) {
-    const [counter, setCounter] = useState(0)
 
+const ListItem = ({ cloth, onRemove }) => {
     return (
         <div className='card'>
-            <h1>
-                {props.name}: {counter}
-            </h1>
-            <button onClick={() => setCounter(counter + 1)}>click</button>
+            <h4>
+                {cloth.url}
+            </h4>
+            <small>
+                {cloth.price}
+            </small>
+            <button onClick={() => onRemove(cloth)}>REMOVE</button>
         </div>
     )
 }
+
+ListItem.propTypes = {
+    cloth: PropTypes.object.isRequired,
+    onRemove: PropTypes.func.isRequired,
+}
+
+export default ListItem

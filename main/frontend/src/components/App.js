@@ -9,16 +9,17 @@ import Store from '../redux/store'
 // Components
 import List from './main/List'
 
-class App extends Component {
-    render() {
-        return (
-            <Provider store={Store}>
-                <Fragment>
-                    <List />
-                </Fragment>
-            </Provider>
-        )
-    }
+const App = () => {
+    const names = ['spodnie', 'kurtka', 'dres']
+    return (
+        <Provider store={Store}>
+            <Fragment>
+                <div className="container">
+                    <List names={names} />
+                </div>
+            </Fragment>
+        </Provider>
+    )
 }
 
 

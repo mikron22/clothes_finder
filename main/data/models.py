@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Cloth(models.Model):
-    id = models.IntegerField(primary_key=True)
     url = models.URLField()
     img = models.ImageField(null=True)
     price = models.CharField(max_length=100)

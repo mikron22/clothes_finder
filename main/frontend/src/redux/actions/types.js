@@ -1,0 +1,3 @@
+export const GET_CLOTHES = 'GET_CLOTHES'
+export const CLEAR_CLOTHES = 'CLEAR_CLOTHES'
+export const REMOVE_CLOTH = 'REMOVE_CLOTH'
