@@ -1,6 +1,6 @@
-from .models import Cloth, Person, Keywords
+from .models import Cloth, Person, Keywords, Settings
 from rest_framework import viewsets, permissions, generics, filters
-from .serializers import ClothSerializer, PersonSerializer, KeywordsSerializer
+from .serializers import ClothSerializer, PersonSerializer, KeywordsSerializer, SettingsSerializer
 
 
 class ClothViewSet(viewsets.ModelViewSet):
@@ -9,6 +9,14 @@ class ClothViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = ClothSerializer
+
+
+class SettingsViewSet(viewsets.ModelViewSet):
+    queryset = Settings.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = SettingsSerializer
 
 
 class PersonAPIView(generics.ListAPIView):

@@ -4,10 +4,12 @@ import PropTypes from 'prop-types'
 
 const ListItem = ({ cloth, onRemove }) => {
     return (
-        <div className='card'>
-            <a href={cloth.url} className='text-primary'>
-                {cloth.url}
-            </a>
+        <div className='card mb-5'>
+            <p>{cloth.id}
+                <a href={cloth.url} className='text-primary'>
+                    {cloth.url}
+                </a>
+            </p>
             <small className='text-muted'>
                 {cloth.price}
             </small>

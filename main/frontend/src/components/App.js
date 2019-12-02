@@ -1,5 +1,5 @@
 // React
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 
 // Redux
@@ -7,15 +7,14 @@ import { Provider } from 'react-redux'
 import Store from '../redux/store'
 
 // Components
-import List from './main/List'
+import Body from './main/Body'
 
 const App = () => {
-    const names = ['spodnie', 'kurtka', 'dres']
     return (
         <Provider store={Store}>
             <Fragment>
                 <div className="container">
-                    <List names={names} />
+                    <Body />
                 </div>
             </Fragment>
         </Provider>
