@@ -9,7 +9,7 @@ class Cloth(models.Model):
     key_words = models.ManyToManyField('Keywords')
 
     def __str__(self):
-        return f'cloth nr {str(self.id)}'
+        return f'cloth nr {str(self.url)}'
 
 
 class Keywords(models.Model):
