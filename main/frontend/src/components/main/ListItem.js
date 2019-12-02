@@ -5,13 +5,14 @@ import PropTypes from 'prop-types'
 const ListItem = ({ cloth, onRemove }) => {
     return (
         <div className='card'>
-            <h4>
+            <a href={cloth.url} className='text-primary'>
                 {cloth.url}
-            </h4>
-            <small>
+            </a>
+            <small className='text-muted'>
                 {cloth.price}
             </small>
-            <button onClick={() => onRemove(cloth)}>REMOVE</button>
+            <img src={cloth.photo} alt={cloth.photo} style={{ padding: '10px' }}></img>
+            <button className='btn btn-primary' onClick={() => onRemove(cloth)}>REMOVE</button>
         </div>
     )
 }

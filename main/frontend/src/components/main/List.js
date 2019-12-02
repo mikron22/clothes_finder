@@ -15,11 +15,19 @@ const List = () => {
         removeCloth(dispatch, clothes, cloth)
     }
 
-    const elements = clothes.map(cloth => <ListItem key={cloth.url} cloth={cloth} onRemove={removeHandler} />)
+    const elements = clothes.map(cloth => {
+        return (
+            <div className='col-4' key={cloth.url}>
+                <ListItem cloth={cloth} onRemove={removeHandler} />
+            </div>
+        )
+    })
 
     return (
         <Fragment>
-            {elements}
+            <div className='row'>
+                {elements}
+            </div>
             <button onClick={() => clearClothes(dispatch)}>DELETE</button>
         </Fragment>
     )
