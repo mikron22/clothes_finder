@@ -10,11 +10,6 @@ const LoginForm = () => {
                 <div className="form-group">
                     <input type="password" className="form-control" id="exampleDropdownFormPassword1" placeholder="Password" />
                 </div>
-                <div className="form-group">
-                    <div className="form-check">
-                        <input type="checkbox" className="form-check-input" id="dropdownCheck" />
-                    </div>
-                </div>
                 <button type="submit" className="btn btn-primary">Sign in</button>
             </form>
             <div className="dropdown-divider"></div>
