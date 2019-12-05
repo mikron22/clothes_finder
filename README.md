@@ -14,3 +14,13 @@ Environment setup:
     pip install -r requirements.txt
   5. open in code:
     code .
+
+In *Code* change the python interpreter and:
+* npm install
+* npm run dev
+
+Another console:
+* cd main
+* python manage.py runserver
+
+App should be working on localhost:8000
