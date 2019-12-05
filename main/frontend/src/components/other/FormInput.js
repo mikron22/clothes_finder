@@ -1,17 +1,17 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-export default (WrappedComponent) => {
+export default FormInput = () => {
 
     const dispatch = useDispatch()
 
-    const hocComponent = ({ action, name, props }) => {
-        return <Input onImput={action(dispatch, name)} {...props} />
+    const FormInput = ({ action, name, ...rest }) => {
+        return <Input onImput={action(dispatch, name)} {...rest} />
     }
 
-    hocComponent.propTypes = {
+    FormInput.propTypes = {
         action = PropTypes.func.isRequired,
     }
 
-    return hocComponent
+    return FormInput
 }
